@@ -7,7 +7,10 @@ import { DirectiveUsageComponent } from './Examples/L07-Directives/directive-usa
 import { BasicHighlightDirective } from './Examples/L07-Directives/directive-usage/CustomDirectives/basic-highlight.directive';
 import { BetterHighlightDirective } from './Examples/L07-Directives/directive-usage/CustomDirectives/better-highlight.directive';
 import { UnlessDirective } from './Examples/L07-Directives/directive-usage/CustomDirectives/unless.directive';
-import { HgutDirective } from './Examples/L07-Directives/directive-usage/CustomDirectives/hgut.directive';
+import { ModuleServicesComponent } from './Examples/L09-ModuleInjections/module-services/module-services.component';
+import { NewAccountComponent } from './Examples/L09-ModuleInjections/new-account/new-account.component';
+import { AccountComponent } from './Examples/L09-ModuleInjections/account/account.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,15 @@ import { HgutDirective } from './Examples/L07-Directives/directive-usage/CustomD
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    HgutDirective
+    ModuleServicesComponent,
+    NewAccountComponent,
+    AccountComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

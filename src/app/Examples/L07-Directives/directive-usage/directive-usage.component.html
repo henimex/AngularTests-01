@@ -48,24 +48,47 @@
             {{ even }}
           </li>
 
-  <!--         Im not sure about this usage-->
-         <ng-template [ngIf]="onlyOdd != undefined">
-          <div>
-           <ul class="list-group">
-            <li
-             class="list-group-item"
-             [ngClass]="{odd: odd % 2 !== 0}"
-             [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'black' : 'transparent'}"
-             *ngFor="let odd of oddNumbers"> v2
-             {{ odd }}
-            </li>
-           </ul>
-          </div>
-         </ng-template>
+          <!-- Im not sure about this usage-->
+          <ng-template [ngIf]="onlyOdd != undefined">
+            <div>
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  [ngClass]="{odd: odd % 2 !== 0}"
+                  [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'black' : 'transparent'}"
+                  *ngFor="let odd of oddNumbers"> v2
+                  {{ odd }}
+                </li>
+              </ul>
+            </div>
+          </ng-template>
         </ul>
-       <p appBasicHighlight> Styling With Basic Directive</p>
-       <p appBetterHighlight [defaultColor]="'green'" [highlightColor]="'pink'"> Styling With Better Directive</p>
-       <hentag>HenTag Test</hentag>
+
+
+          <div *appUnless="onlyOdd">
+            <p>With Custom Directive Unless</p>
+            <ul class="list-group">
+              <li
+                class="list-group-item"
+                [ngClass]="{odd: odd % 2 !== 0}"
+                [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'black' : 'transparent'}"
+                *ngFor="let odd of oddNumbers"> v2
+                {{ odd }}
+              </li>
+            </ul>
+          </div>
+
+
+        <p appBasicHighlight> Styling With Basic Directive</p>
+        <p appBetterHighlight [defaultColor]="'green'" [highlightColor]="'pink'"> Styling With Better Directive</p>
+        <hentag>HenTag Test</hentag>
+      </div>
+
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is Five</p>
+        <p *ngSwitchCase="10">Value is Ten</p>
+        <p *ngSwitchCase="100">Value is a Hundred</p>
+        <p *ngSwitchDefault>Value is Default</p>
       </div>
     </div>
   </div>
