@@ -1,0 +1,72 @@
+<div class="container">
+  <h3>07-Directives</h3>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd"> Only Show Odd Numbers
+      </button>
+
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = undefined"> Show All
+      </button>
+      <br><br>
+
+      <div *ngIf="onlyOdd== undefined">
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            [ngClass]="{odd: number % 2 !== 0}"
+            [ngStyle]="{backgroundColor: number % 2 !== 0 ? 'black' : 'transparent'}"
+            *ngFor="let number of numbers">
+            {{ number }}
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="onlyOdd">
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            [ngClass]="{odd: odd % 2 !== 0}"
+            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'black' : 'transparent'}"
+            *ngFor="let odd of oddNumbers">
+            {{ odd }}
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="!onlyOdd && onlyOdd != undefined">
+        <ul class="list-group">
+          <li
+            [ngClass]="{odd: even % 2 !== 0}"
+            [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'black' : 'transparent'}"
+            class="list-group-item"
+            *ngFor="let even of evenNumbers">
+            {{ even }}
+          </li>
+
+  <!--         Im not sure about this usage-->
+         <ng-template [ngIf]="onlyOdd != undefined">
+          <div>
+           <ul class="list-group">
+            <li
+             class="list-group-item"
+             [ngClass]="{odd: odd % 2 !== 0}"
+             [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'black' : 'transparent'}"
+             *ngFor="let odd of oddNumbers"> v2
+             {{ odd }}
+            </li>
+           </ul>
+          </div>
+         </ng-template>
+        </ul>
+       <p appBasicHighlight> Styling With Basic Directive</p>
+       <p appBetterHighlight [defaultColor]="'green'" [highlightColor]="'pink'"> Styling With Better Directive</p>
+       <hentag>HenTag Test</hentag>
+      </div>
+    </div>
+  </div>
+</div>
