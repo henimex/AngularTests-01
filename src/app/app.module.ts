@@ -13,13 +13,13 @@ import {AccountComponent} from './Examples/L09-ModuleInjections/account/account.
 import {FormsModule} from '@angular/forms';
 import {AccountService} from './Examples/L09-ModuleInjections/services/account.service';
 import {LoggingService} from './Examples/L09-ModuleInjections/services/logging.service';
-import { HomeComponent } from './Examples/L11-Routing/home/home.component';
-import { ServersComponent } from './Examples/L11-Routing/servers/servers.component';
-import { UsersComponent } from './Examples/L11-Routing/users/users.component';
-import { RoutingUsageComponent } from './Examples/L11-Routing/routing-usage/routing-usage.component';
-import { EditServerComponent } from './Examples/L11-Routing/servers/edit-server/edit-server.component';
-import { ServerComponent } from './Examples/L11-Routing/servers/server/server.component';
-import { UserComponent } from './Examples/L11-Routing/users/user/user.component';
+import {HomeComponent} from './Examples/L11-Routing/home/home.component';
+import {ServersComponent} from './Examples/L11-Routing/servers/servers.component';
+import {UsersComponent} from './Examples/L11-Routing/users/users.component';
+import {RoutingUsageComponent} from './Examples/L11-Routing/routing-usage/routing-usage.component';
+import {EditServerComponent} from './Examples/L11-Routing/servers/edit-server/edit-server.component';
+import {ServerComponent} from './Examples/L11-Routing/servers/server/server.component';
+import {UserComponent} from './Examples/L11-Routing/users/user/user.component';
 import {ServersService} from './Examples/L11-Routing/servers/servers.service';
 
 @NgModule({
